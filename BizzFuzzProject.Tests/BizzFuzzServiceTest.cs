@@ -51,11 +51,20 @@ public class BizzFuzzServiceTest
     }
     
     /// <summary>
-    /// 數字裡含有3的回完"Bizz"
+    /// 數字裡含有3的回傳Bizz
     /// </summary>
     [Test]
     public void Return_Bizz_WhenHaveThree()
     {
         Assert.That(_service.Query(32), Is.EqualTo("Bizz"));
+    }
+    
+    /// <summary>
+    /// 數字裡含有5的回傳Fuzz
+    /// </summary>
+    [Test]
+    public void Return_Fuzz_WhenHaveFive()
+    {
+        Assert.That(_service.Query(58), Is.EqualTo("Fuzz"));
     }
 }
