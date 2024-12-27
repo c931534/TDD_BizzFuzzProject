@@ -41,12 +41,21 @@ public class BizzFuzzServiceTest
         Assert.That(_service.Query(5), Is.EqualTo("Fuzz"));
     }
     
-    // <summary>
+    /// <summary>
     /// 可以被3和5整除地要回傳BizzFuzz
     /// </summary>
     [Test]
     public void Return_BizzFuzz()
     {
         Assert.That(_service.Query(15), Is.EqualTo("BizzFuzz"));
+    }
+    
+    /// <summary>
+    /// 數字裡含有3的回完"Bizz"
+    /// </summary>
+    [Test]
+    public void Return_Bizz_WhenHaveThree()
+    {
+        Assert.That(_service.Query(32), Is.EqualTo("BizzFuzz"));
     }
 }
