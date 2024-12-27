@@ -20,6 +20,6 @@ public class BizzFuzzServiceTest
     public void Return_Bizz()
     {
         var result = BizzFuzzService.Query(3);
-        Assert.That(result, Is.EqualTo("Fizz"));
+        Assert.That(result, Is.EqualTo("Bizz"));
     }
 }
