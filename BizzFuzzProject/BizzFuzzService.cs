@@ -4,15 +4,20 @@ public class BizzFuzzService
 {
     public string Query(int number)
     {
-        if (number.ToString().Contains("5") && number % 3 != 0)
+        if (IsFuzz(number) && !IsBizz(number))
             return "Fuzz";
-        if (IsBizz(number) && number % 5 != 0)
+        if (IsBizz(number) && !IsFuzz(number))
             return "Bizz";
-        if (number % 5 == 0 && IsBizz(number))
+        if (IsFuzz(number) && IsBizz(number))
             return "BizzFuzz";
-        if (number % 5 == 0)
+        if (IsFuzz(number))
             return "Fuzz";
         return number.ToString();
+    }
+
+    private bool IsFuzz(int number)
+    {
+        return number.ToString().Contains("5") || number % 5 == 0;
     }
 
     private bool IsBizz(int number)
