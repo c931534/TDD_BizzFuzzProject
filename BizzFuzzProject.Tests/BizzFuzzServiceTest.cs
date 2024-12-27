@@ -56,6 +56,6 @@ public class BizzFuzzServiceTest
     [Test]
     public void Return_Bizz_WhenHaveThree()
     {
-        Assert.That(_service.Query(32), Is.EqualTo("BizzFuzz"));
+        Assert.That(_service.Query(32), Is.EqualTo("Bizz"));
     }
 }
