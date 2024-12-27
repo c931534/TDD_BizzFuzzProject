@@ -24,7 +24,7 @@ public class BizzFuzzServiceTest
     }
 
     /// <summary>
-    /// 可以被3整除地要回傳bizz
+    /// 可以被3整除地要回傳Bizz
     /// </summary>
     [Test]
     public void Return_Bizz()
@@ -33,11 +33,20 @@ public class BizzFuzzServiceTest
     }
     
     /// <summary>
-    /// 可以被3整除地要回傳bizz
+    /// 可以被3整除地要回傳Fuzz
     /// </summary>
     [Test]
     public void Return_Fuzz()
     {
         Assert.That(_service.Query(5), Is.EqualTo("Fuzz"));
+    }
+    
+    // <summary>
+    /// 可以被3和5整除地要回傳BizzFuzz
+    /// </summary>
+    [Test]
+    public void Return_BizzFuzz()
+    {
+        Assert.That(_service.Query(15), Is.EqualTo("BizzFuzz"));
     }
 }
