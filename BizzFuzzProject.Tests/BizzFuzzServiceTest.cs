@@ -67,4 +67,13 @@ public class BizzFuzzServiceTest
     {
         Assert.That(_service.Query(58), Is.EqualTo("Fuzz"));
     }
+    
+    /// <summary>
+    /// 數字裡含有5和3的回傳BizzFuzz
+    /// </summary>
+    [Test]
+    public void Return_BizzFuzz_WhenHaveThreeFive()
+    {
+        Assert.That(_service.Query(35), Is.EqualTo("BizzFuzz"));
+    }
 }
