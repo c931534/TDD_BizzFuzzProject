@@ -4,6 +4,8 @@ public class BizzFuzzService
 {
     public string Query(int number)
     {
+        if (number.ToString().Contains("5") && number % 3 != 0)
+            return "Fuzz";
         if (IsBizz(number) && number % 5 != 0)
             return "Bizz";
         if (number % 5 == 0 && IsBizz(number))
