@@ -7,19 +7,28 @@ namespace BizzFuzzProject.Tests;
 [TestOf(typeof(BizzFuzzService))]
 public class BizzFuzzServiceTest
 {
+    private BizzFuzzService _service;
 
+    public BizzFuzzServiceTest()
+    {
+        _service = new BizzFuzzService();
+    }
+    
+    /// <summary>
+    /// 所有數字回傳
+    /// </summary>
     [Test]
     public void Return_Number()
     {
-        BizzFuzzService service = new BizzFuzzService();
-        var result = BizzFuzzService.Query(1);
-        Assert.That("1", Is.EqualTo(result));
+        Assert.That("1", Is.EqualTo(_service.Query(1)));
     }
 
+    /// <summary>
+    /// 可以被3整除地要回傳bizz
+    /// </summary>
     [Test]
     public void Return_Bizz()
     {
-        var result = BizzFuzzService.Query(3);
-        Assert.That(result, Is.EqualTo("Bizz"));
+        Assert.That(_service.Query(3), Is.EqualTo("Bizz"));
     }
 }
